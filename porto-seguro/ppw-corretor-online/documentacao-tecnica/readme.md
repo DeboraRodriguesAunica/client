@@ -1,4 +1,4 @@
-![aunica](https://implementacaoaunica.github.io/sellersfunding_wp/aunica.jpg?raw=true)
+![aunica](https://implementacaoaunica.github.io/client/aunica.jpg?raw=true)
 
 > Área - Digital Analytics<br />
 > Documento de Especificação Técnica
