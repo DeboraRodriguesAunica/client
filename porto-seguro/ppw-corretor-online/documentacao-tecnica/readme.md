@@ -216,7 +216,7 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado Ã
 
 - Localizar Documentos
 
-![Localizar-doc](https://implementacaoaunica.github.io/sellersfunding_wp/client/prints/localizar-doc.png?raw=true)
+![Localizar-doc](https://implementacaoaunica.github.io/client/prints/localizar-doc.png?raw=true)
 
 
 - **Em Localizar Documentos**<br />
