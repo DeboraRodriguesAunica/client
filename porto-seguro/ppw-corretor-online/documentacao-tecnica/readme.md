@@ -526,6 +526,34 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
+- Modal
+
+![Modal](https://implementacaoaunica.github.io/client/prints/distribuicao.png?raw=true)
+
+- **No clique dos botões dos modais**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-button]]"
+  data-gtm-subname="[[nome-modal]]"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-button]]  | Deve retornar o nome do botão clicado | "salvar-e-sair", "ok", "fechar" e etc|
+| [[nome-modal]]  | Deve retornar o nome do modal | "modal-distribuicao-de-corretagem", "modal-depreciacao" e etc |
+| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
+
+
+
+<br />
+
 
 ---
 
