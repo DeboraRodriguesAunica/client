@@ -1,4 +1,4 @@
-![aunica](https://implementacaoaunica.github.io/client/aunica.jpg?raw=true)
+![aunica](https://implementacaoaunica.github.io/sellersfunding_wp/aunica.jpg?raw=true)
 
 > Área - Digital Analytics<br />
 > Documento de Especificação Técnica
@@ -7,7 +7,7 @@
 
 ## Guia de estruturação HTML para tagueamento - PPW Corretor Online Unificado
 
-> Última atualização: 16/04/2021 <br />
+> Última atualização: 19/04/2021 <br />
 
 <br />
 
@@ -299,6 +299,100 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 
 <br />
+
+- Resultado Busca
+
+![Resultado-busca](https://implementacaoaunica.github.io/client/prints/resultado-busca.png?raw=true)
+
+- **No clique dos botões**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-button]]"
+  data-gtm-subname="resultado-busca"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-button]]  | Deve retornar o nome do botão clicado | "orcamento", "proposta", "historico" e etc |
+
+
+
+<br />
+
+- **Na interação para abrir ou fechar algum resultado de busca**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="link"
+  data-gtm-name="[[acao]]"
+  data-gtm-subname="resultado-busca"
+  data-gtm-doc="[[doc]]"
+
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[acao]]  | Deve retornar a ação do usuário | "abrir" ou "fechar" |
+| [[doc]]  | Deve retornar o numero do documento que se teve a ação | "95863254" e etc |
+
+
+
+<br />
+
+- **Ao selecionar algum resultado de busca**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="resultado-busca"
+  data-gtm-doc="[[doc]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[doc]]  | Deve retornar o numero do documento que se teve a ação | "95863254" e etc |
+
+
+
+<br />
+
+- **No clique do botão do chat do resultado de busca**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="chat"
+  data-gtm-subname="resultado-busca"
+  data-gtm-doc="[[doc]]"
+ >
+</div>
+```
+
+
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[doc]]  | Deve retornar o numero do documento que se teve a ação | "95863254" e etc |
+
+
+
+<br />
+
 
 ---
 
