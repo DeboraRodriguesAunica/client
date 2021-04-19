@@ -1,4 +1,4 @@
-![aunica](https://implementacaoaunica.github.io/sellersfunding_wp/aunica.jpg?raw=true)
+![aunica](https://implementacaoaunica.github.io/client/aunica.jpg?raw=true)
 
 > Área - Digital Analytics<br />
 > Documento de Especificação Técnica
@@ -22,7 +22,6 @@
 - [Atributo data-gtm-formtype](#atributo-data-gtm-formtype)
 - [Atributo data-gtm-name](#atributo-data-gtm-name)
 - [Atributo data-gtm-subname](#atributo-data-gtm-subname)
-- [Atributo data-gtm-enterprise](#atributo-data-gtm-enterprise)
 - [Exemplos práticos](#exemplos-pr&aacute;ticos)
 
 
@@ -393,9 +392,9 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
-- Resultado Busca
+- Modal fale conosco
 
-![Resultado-busca](https://implementacaoaunica.github.io/client/prints/modal-fale-conosco.png?raw=true)
+![Modal-fale-conosco](https://implementacaoaunica.github.io/client/prints/modal-fale-conosco.png?raw=true)
 
 - **No clique dos botões**<br />
 
