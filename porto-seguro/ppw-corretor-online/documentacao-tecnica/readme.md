@@ -533,6 +533,30 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
+![checkbox](https://implementacaoaunica.github.io/client/prints/checkbox.png?raw=true)
+
+- **Ao selecionar alguma opção de checkbox nos steps**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[item-selecionado]]"
+  data-gtm-subname="[[titulo]]"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[item-selecionado]]  | Deve retornar o nome do item selecionado | "porto-seguro", "itau-seguro-auto" e etc |
+| [[titulo]]  | Deve retornar o nome do titulo | "seguradoras-para-calcular" e etc |
+| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
+
+
+
+<br />
 
 ---
 
