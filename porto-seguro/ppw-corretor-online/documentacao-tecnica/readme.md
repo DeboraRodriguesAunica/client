@@ -437,6 +437,95 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
+- Orçamento
+
+![Orcamento](https://implementacaoaunica.github.io/client/prints/orcamento.png?raw=true)
+
+- **No clique dos botões ou links de cada etapa do formulário**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="[[button ou link]]"
+  data-gtm-name="[[nome-button ou link]]"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[button ou link]]  | Deve retornar o tipo de elemento clicado | "button", "link" |
+| [[nome-button ou link]]  | Deve retornar o nome do botão ou link clicado | "salvar", "continuar", "distribuicao-de-corretagem", "pesquisar-cep" e etc |
+| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
+
+
+
+<br />
+
+- **Ao selecionar alguma opção no formulario em cada etapa**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[nome-filtro]]"
+  data-gtm-subname="[[opcao]]"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [nome-filtro]]  | Deve retornar o nome do filtro | "documento", "susep", "seguro-coletivo" e etc |
+| [[opcao]]  | Deve retornar a opção selecionada | "seguro-novo", "renovacao", "sim" e etc |
+| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
+
+
+<br />
+
+- **Em todas as etapas do formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<form 
+  data-gtm-type="form"
+  data-gtm-name= "orcamento"
+  data-gtm-step="[[step]]"
+ >
+</form>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
+
+
+<br />
+
+
+- **Na interação com os campos do formulário em cada etapa**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<input  
+  data-gtm-form="input"
+  data-gtm-name="[[campo]]"
+  data-gtm-step="[[step]]"
+ >
+</input>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[campo]]  | Deve retornar o nome do campo que teve a interação | "nome", "data-nascimento" e etc |
+| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
+
+
+<br />
+
 
 ---
 
