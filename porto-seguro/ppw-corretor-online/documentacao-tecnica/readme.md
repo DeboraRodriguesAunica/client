@@ -1,4 +1,4 @@
-![aunica](https://implementacaoaunica.github.io/client/aunica.jpg?raw=true)
+![aunica](https://implementacaoaunica.github.io/sellersfunding_wp/aunica.jpg?raw=true)
 
 > Área - Digital Analytics<br />
 > Documento de Especificação Técnica
@@ -388,6 +388,51 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
 | [[doc]]  | Deve retornar o numero do documento que se teve a ação | "95863254" e etc |
+
+
+
+<br />
+
+- Resultado Busca
+
+![Resultado-busca](https://implementacaoaunica.github.io/client/prints/modal-fale-conosco.png?raw=true)
+
+- **No clique dos botões**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-button]]"
+  data-gtm-subname="modal-fale-conosco"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-button]]  | Deve retornar o nome do botão clicado | "inciar-chat", "fechar" |
+
+
+
+<br />
+
+- **Ao selecionar alguma opção no modal "Fale conosco"**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[opcao]]"
+  data-gtm-subname="modal-fale-conosco"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[opcao]]  | Deve retornar a opção selecionada | "help-desk-corretores", "auto-nucleo-de-negocios-emissao" e etc |
 
 
 
