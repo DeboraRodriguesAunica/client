@@ -392,50 +392,7 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
-- Modal fale conosco
 
-![Modal-fale-conosco](https://implementacaoaunica.github.io/client/prints/modal-fale-conosco.png?raw=true)
-
-- **No clique dos botões**<br />
-
-```html
-<!-- Use se os atributos no elemento a ser clicado -->
-<div  
-  data-gtm-type="click"
-  data-gtm-clicktype="button"
-  data-gtm-name="[[nome-button]]"
-  data-gtm-subname="modal-fale-conosco"
- >
-</div>
-```
-
-| Variavel  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
-| [[nome-button]]  | Deve retornar o nome do botão clicado | "inciar-chat", "fechar" |
-
-
-
-<br />
-
-- **Ao selecionar alguma opção no modal "Fale conosco"**<br />
-
-```html
-<!-- Use se os atributos no elemento a ser clicado -->
-<div  
-  data-gtm-type="select"
-  data-gtm-name="[[opcao]]"
-  data-gtm-subname="modal-fale-conosco"
- >
-</div>
-```
-
-| Variavel  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
-| [[opcao]]  | Deve retornar a opção selecionada | "help-desk-corretores", "auto-nucleo-de-negocios-emissao" e etc |
-
-
-
-<br />
 
 - Orçamento
 
@@ -547,6 +504,28 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
 | [[nome-button]]  | Deve retornar o nome do botão clicado | "salvar-e-sair", "ok", "fechar" e etc|
+| [[nome-modal]]  | Deve retornar o nome do modal | "modal-distribuicao-de-corretagem", "modal-depreciacao" e etc |
+| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
+
+
+
+<br />
+
+- **Ao selecionar alguma opção nos modais de cada step**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-subname="[[nome-modal]]"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[opcao]]  | Deve retornar a opção selecionada | "help-desk-corretores", "auto-nucleo-de-negocios-emissao" e etc |
 | [[nome-modal]]  | Deve retornar o nome do modal | "modal-distribuicao-de-corretagem", "modal-depreciacao" e etc |
 | [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
 
