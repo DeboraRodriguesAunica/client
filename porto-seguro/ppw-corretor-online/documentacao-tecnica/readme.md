@@ -208,6 +208,127 @@ Além disso, é necessário o preenchimento do atributo data-gtm-name para que p
 Caso exista a necessidade de especificar ainda mais o elemento que foi clicado é necessário indicar um no preenchimento do atributo data-gtm-subname para que possamos identificar em qual elemento ocorreu a interação.
 </p>
 
+---
+
+### Eventos Padrões
+
+#### Visualizações de página
+
+<p style='text-align: justify;'>Em aplicações Ajax, Angular, React, Vue e demais onde a página não é recarregada durante o passo a passo, há a necessidade de um push no objeto dataLayer com as seguintes informações preenchidas:</p>
+
+```html
+<script>
+dataLayer = window.dataLayer || [];
+dataLayer.push({
+  event: 'step_change',
+      etapa: '',
+      nome: '',
+      step: '', // em alguns casos
+      cliente: '', //em alguns casos
+})
+</script>
+```
+
+| Atributo  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| etapa  | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
+| nome  | Deve retornar o nome da pagina | "proposta", "orcamento" e etc |
+| step  | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
+| cliente  | Deve retornar o nome do cliente | "segurado", "novo-cliente" |
+
+<br />
+
+#### Visualização de modal
+
+<p style='text-align: justify;'>Em aplicações onde existe a interação dentro modais na página, há a necessidade de um push no objeto dataLayer para sabermos o momento exato em que o usuário trocou de passo:</p>
+
+```html
+<script>
+dataLayer = window.dataLayer || [];
+dataLayer.push({
+  event: 'modal',
+  nome: '',
+  step: '', // em alguns casos,
+  cliente: '', //em alguns casos
+  etapa: ''
+})
+</script>
+```
+| Atributo  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| etapa  | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
+| nome  | Deve retornar o nome do modal | "atencao" e etc |
+| step  | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
+| cliente  | Deve retornar o nome do cliente | "segurado", "novo-cliente" |
+
+<br />
+
+
+#### Solicitação de serviços
+
+<p style='text-align: justify;'>Chamada criada para ser disparada sempre que algum dos serviços for solicitado pelo usuário.</p>
+
+```html
+<script>
+dataLayer.push({
+  event: 'solicitacao_servico',
+  tipo_servico: '',   
+  id_usuario: '', 
+  susep: '',
+  cliente: '', //em alguns casos
+  doc: '', // em alguns casos
+  veiculo: '', //em alguns casos
+  lmi: '', //em alguns casos 
+  retorno: '',      
+  descricao: '',      
+      erro: {
+           codigo: '',
+           servico: '',
+           mensagem: ''
+      }
+});
+</script>
+```
+| Atributo  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| tipo_servico  | Tipo do serviço referente à solicitação que foi realizada. | "proposta", "orcamento" e etc |
+| id_usuario  | CPF Criptografado  AESCryptography (Utilizada nos ambientes porto e azul) | “a750c220a060fcf487f9519d3203035b” |
+| susep  | Deve indicar o susep do corretor | "CJO1" e etc |
+| cliente  | Deve retornar o nome do cliente | "segurado", "novo-cliente" e etc |
+| doc  | Deve retornar o numero da doc | "56565656" e etc |
+| veiculo  | Deve retornar o nome do veiculo | "novo-focus-hath" e etc |
+| lmi  | Deve retornar o valor do lmi | "48.773,00" e etc |
+| retorno  | Deve indicar o sucesso ou erro da tentativa da solicitação de serviço | "sucesso" ou "erro" |
+| descricao  | Deve trazer a descrição do retorno | "proposta-realizada-com-sucesso" e etc |
+| codigo  | Deve trazer o código do erro | "124 e etc |
+| servico  | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
+| mensagem  | Deve trazer a descrição do erro | "dados-invalidos" e etc |
+
+<br />
+
+#### Erros
+
+<p style='text-align: justify;'>Apesar de termos a indicação de erro nos eventos que representam as KPI’s, precisamos mapear todos os retornos de erro do sistema que são exibidos para o usuário. Por isso, caso o erro exibido não corresponda ao retorno dos eventos listados acima, é necessário a implementação do dataLayer.push descrito abaixo:</p>
+
+```html
+<script>
+dataLayer.push({
+      event:'erro',
+      codigo: '',
+      servico: '',
+      mensagem: ''
+});
+</script>
+```
+
+| Atributo  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| codigo  | Deve trazer o código do erro | "124 e etc |
+| servico  | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
+| mensagem  | Deve trazer a descrição do erro | "dados-invalidos" e etc |
+
+<br />
+
 
 ---
 
@@ -391,6 +512,8 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 
 <br />
+
+---
 
 #### Orçamento
 
@@ -674,6 +797,8 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
+---
+
 #### Seguro Carta Verde
 
 ![seguro-carta-verde](https://implementacaoaunica.github.io/client/prints/seguro-carta-verde.png?raw=true)
@@ -813,7 +938,7 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
-- 
+---
 
 #### Renovação
 
@@ -1212,6 +1337,8 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
+---
+
 ### Novidades
 
 ![novidades](https://implementacaoaunica.github.io/client/prints/novidades.png?raw=true)
@@ -1239,6 +1366,8 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 
 <br />
+
+---
 
 ### Gestão de Vendas
 
