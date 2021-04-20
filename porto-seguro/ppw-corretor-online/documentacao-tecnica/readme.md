@@ -243,12 +243,12 @@ dataLayer.push({
 </script>
 ```
 
-| Atributo  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
-| etapa  | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
-| nome  | Deve retornar o nome da pagina | "proposta", "orcamento" e etc |
-| step  | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
-| cliente  | Deve retornar o nome do cliente | "segurado", "novo-cliente" |
+| Atributo  |  Descrição     | Exemplo |
+| :-------- | :------------- | :------ | 
+| etapa     | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
+| nome      | Deve retornar o nome da pagina | "proposta", "orcamento" e etc |
+| step      | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
+| cliente   | Deve retornar o nome do cliente | "segurado", "novo-cliente" |
 
 <br />
 
@@ -270,10 +270,10 @@ dataLayer.push({
 ```
 | Atributo  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
-| etapa  | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
-| nome  | Deve retornar o nome do modal | "atencao" e etc |
-| step  | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
-| cliente  | Deve retornar o nome do cliente | "segurado", "novo-cliente" |
+| etapa     | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
+| nome      | Deve retornar o nome do modal | "atencao" e etc |
+| step      | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
+| cliente   | Deve retornar o nome do cliente | "segurado", "novo-cliente" |
 
 <br />
 
@@ -303,20 +303,20 @@ dataLayer.push({
 });
 </script>
 ```
-| Atributo  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
-| tipo_servico  | Tipo do serviço referente à solicitação que foi realizada. | "proposta", "orcamento" e etc |
-| id_usuario  | CPF Criptografado  AESCryptography (Utilizada nos ambientes porto e azul) | “a750c220a060fcf487f9519d3203035b” |
-| susep  | Deve indicar o susep do corretor | "CJO1" e etc |
-| cliente  | Deve retornar o nome do cliente | "segurado", "novo-cliente" e etc |
-| doc  | Deve retornar o numero da doc | "56565656" e etc |
-| veiculo  | Deve retornar o nome do veiculo | "novo-focus-hath" e etc |
-| lmi  | Deve retornar o valor do lmi | "48.773,00" e etc |
-| retorno  | Deve indicar o sucesso ou erro da tentativa da solicitação de serviço | "sucesso" ou "erro" |
-| descricao  | Deve trazer a descrição do retorno | "proposta-realizada-com-sucesso" e etc |
-| codigo  | Deve trazer o código do erro | "124 e etc |
-| servico  | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
-| mensagem  | Deve trazer a descrição do erro | "dados-invalidos" e etc |
+| Atributo  |  Descrição                 | Exemplo |
+| :-------- | :------------------------- | :------ | 
+| tipo_servico | Tipo do serviço referente à solicitação que foi realizada. | "proposta", "orcamento" e etc |
+| id_usuario   | CPF Criptografado  AESCryptography (Utilizada nos ambientes porto e azul) | “a750c220a060fcf487f9519d3203035b” |
+| susep        | Deve indicar o susep do corretor | "CJO1" e etc |
+| cliente      | Deve retornar o nome do cliente | "segurado", "novo-cliente" e etc |
+| doc          | Deve retornar o numero da doc | "56565656" e etc |
+| veiculo      | Deve retornar o nome do veiculo | "novo-focus-hath" e etc |
+| lmi          | Deve retornar o valor do lmi | "48.773,00" e etc |
+| retorno      | Deve indicar o sucesso ou erro da tentativa da solicitação de serviço | "sucesso" ou "erro" |
+| descricao    | Deve trazer a descrição do retorno | "proposta-realizada-com-sucesso" e etc |
+| codigo       | Deve trazer o código do erro | "124 e etc |
+| servico      | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
+| mensagem    | Deve trazer a descrição do erro | "dados-invalidos" e etc |
 
 <br />
 
