@@ -7,7 +7,7 @@
 
 ## Guia de estruturação HTML para tagueamento - PPW Corretor Online Unificado
 
-> Última atualização: 19/04/2021 <br />
+> Última atualização: 20/04/2021 <br />
 
 <br />
 
@@ -22,7 +22,9 @@
 - [Atributo data-gtm-formtype](#atributo-data-gtm-formtype)
 - [Atributo data-gtm-name](#atributo-data-gtm-name)
 - [Atributo data-gtm-subname](#atributo-data-gtm-subname)
+- [Eventos Padrões](#eventos-padr&otilde;es)
 - [Exemplos práticos](#exemplos-pr&aacute;ticos)
+
 
 
 ## Objetivo
@@ -206,6 +208,18 @@ Além disso, é necessário o preenchimento do atributo data-gtm-name para que p
 
 <p style='text-align: justify;'>
 Caso exista a necessidade de especificar ainda mais o elemento que foi clicado é necessário indicar um no preenchimento do atributo data-gtm-subname para que possamos identificar em qual elemento ocorreu a interação.
+</p>
+
+#### Atributo data-gtm-step
+
+<p style='text-align: justify;'>
+Caso exista a necessidade de especificar ainda mais o elemento que foi clicado é necessário indicar um no preenchimento do atributo data-gtm-step para que possamos identificar em qual step ocorreu a interação.
+</p>
+
+#### Atributo data-gtm-cliente
+
+<p style='text-align: justify;'>
+Caso exista a necessidade de especificar ainda mais o elemento que foi clicado é necessário indicar um no preenchimento do atributo data-gtm-cliente para que possamos identificar em qual o tipo do cliente
 </p>
 
 ---
