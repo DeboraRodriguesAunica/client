@@ -791,7 +791,7 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 - Historico Transmissão de Orçamentos
 
-![modal-resultado](https://implementacaoaunica.github.io/client/prints/historico-transmissao.png?raw=true)
+![modal-resultado](https://implementacaoaunica.github.io/client/prints/modal-resultado.png?raw=true)
 
 - **No clique dos botões dos modais**<br />
 
