@@ -905,10 +905,238 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
+---
+
+#### Endoso
+
+- Inclusão de item
+
+![inclusao](https://implementacaoaunica.github.io/client/prints/inclusao.png?raw=true)
+
+
+- **No clique doo botão buscar**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="buscar"
+  data-gtm-subname="endosso-inclusao-de-item"
+ >
+</div>
+```
+
+<br />
+
+
+
+- **Ao selecionar alguma opção no formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[item-selecionado]]"
+  data-gtm-subname="[[titulo]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[item-selecionado]]  | Deve retornar o nome do item selecionado | "COL10J", "1" e etc|
+| [[titulo]]  | Deve retornar o nome do titulo | "susep", "quantidade-de-itens" e etc |
+
+<br />
+
+- **Em todas as etapas do formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<form 
+  data-gtm-type="form"
+  data-gtm-name= "endosso-inclusao-de-item"
+ >
+</form>
+```
+
+<br />
+
+
+- **Na interação com os campos do formulário em cada etapa**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<input  
+  data-gtm-form="input"
+  data-gtm-name="[[campo]]"
+  data-gtm-subname= "endosso-inclusao-de-item"
+ >
+</input>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[campo]]  | Deve retornar o nome do campo que teve a interação | "sucursal", "apolice" e etc |
+
+
+<br />
 
 
 
 
+- Substituição de Veiculo ou alteração de Apólice
+
+![substituicao](https://implementacaoaunica.github.io/client/prints/substituicao.png?raw=true)
+
+
+- **No clique doo botão buscar**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="buscar"
+  data-gtm-subname="endosso-substituicao-de-veiculo-ou-alteracao-de-apolice"
+ >
+</div>
+```
+
+
+<br />
+
+
+
+- **Ao selecionar alguma opção no formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[item-selecionado]]"
+  data-gtm-subname="[[titulo]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[item-selecionado]]  | Deve retornar o nome do item selecionado | "COL10J", "1" e etc|
+| [[titulo]]  | Deve retornar o nome do titulo | "susep", "n-item" e etc |
+
+<br />
+
+- **Em todas as etapas do formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<form 
+  data-gtm-type="form"
+  data-gtm-name= "endosso-substituicao-de-veiculo-ou-alteracao-de-apolice"
+ >
+</form>
+```
+
+<br />
+
+
+- **Na interação com os campos do formulário**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<input  
+  data-gtm-form="input"
+  data-gtm-name="[[campo]]"
+  data-gtm-subname= "endosso-substituicao-de-veiculo-ou-alteracao-de-apolice"
+ >
+</input>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[campo]]  | Deve retornar o nome do campo que teve a interação | "sucursal", "apolice" e etc |
+
+
+<br />
+
+
+
+
+- Cancelamento de apolice ou item
+
+![cancelamento](https://implementacaoaunica.github.io/client/prints/cancelamento.png?raw=true)
+
+
+- **No clique doo botão buscar**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="buscar"
+  data-gtm-subname="endosso-cancelamento-de-apolice-ou-item"
+ >
+</div>
+```
+
+<br />
+
+
+
+- **Ao selecionar alguma opção no formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[item-selecionado]]"
+  data-gtm-subname="[[titulo]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[item-selecionado]]  | Deve retornar o nome do item selecionado | "COL10J", "1" e etc|
+| [[titulo]]  | Deve retornar o nome do titulo | "susep", "n-item" e etc |
+
+<br />
+
+- **Em todas as etapas do formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<form 
+  data-gtm-type="form"
+  data-gtm-name= "endosso-cancelamento-de-apolice-ou-item"
+ >
+</form>
+```
+
+<br />
+
+
+- **Na interação com os campos do formulário**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<input  
+  data-gtm-form="input"
+  data-gtm-name="[[campo]]"
+  data-gtm-subname= "endosso-cancelamento-de-apolice-ou-item"
+ >
+</input>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[campo]]  | Deve retornar o nome do campo que teve a interação | "sucursal", "apolice" e etc |
+
+
+<br />
 
 
 ---
