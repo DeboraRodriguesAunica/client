@@ -1062,8 +1062,6 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 <br />
 
 
-
-
 - Cancelamento de apolice ou item
 
 ![cancelamento](https://implementacaoaunica.github.io/client/prints/cancelamento.png?raw=true)
@@ -1138,6 +1136,109 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
+---
+
+### Oportunidade de Vendas
+
+![oportunidade-de-vendas](https://implementacaoaunica.github.io/client/prints/oportunidade-de-vendas.png?raw=true)
+
+
+- **No clique doo botão buscar**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="buscar"
+  data-gtm-subname="oportunidade-de-vendas"
+ >
+</div>
+```
+
+<br />
+
+
+
+- **Ao selecionar alguma opção no formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[item-selecionado]]"
+  data-gtm-subname="[[titulo]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[item-selecionado]]  | Deve retornar o nome do item selecionado | "ex-cliente-porto", "n-documento" e etc|
+| [[titulo]]  | Deve retornar o nome do titulo | "tipo-de-cliente", "tipo" e etc |
+
+<br />
+
+- **Em todas as etapas do formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<form 
+  data-gtm-type="form"
+  data-gtm-name= "oportunidade-de-vendas"
+ >
+</form>
+```
+
+<br />
+
+
+- **Na interação com os campos do formulário**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<input  
+  data-gtm-form="input"
+  data-gtm-name="[[campo]]"
+  data-gtm-subname= "oportunidade-de-vendas"
+ >
+</input>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[campo]]  | Deve retornar o nome do campo que teve a interação | "nome-do-proponente", "numero" e etc |
+
+
+<br />
+
+### Novidades
+
+![novidades](https://implementacaoaunica.github.io/client/prints/novidades.png?raw=true)
+
+
+- **No clique doo botão buscar**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-botao]]"
+  data-gtm-subname="novidades"
+  data-gtm-subname="[[step]]"
+
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-botao]]  | Deve retornar o nome do botao clicado | "proximo", "anterior", "comecar-as-mudancas" |
+| [[step]]  | Deve retornar o nome da aba | "cabecalho-e-menu", "passo-a-passo" e etc |
+
+
+<br />
 
 ---
 
