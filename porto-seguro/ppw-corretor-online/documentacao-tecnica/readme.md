@@ -815,6 +815,99 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 - 
 
+#### Renovação
+
+![renovacao](https://implementacaoaunica.github.io/client/prints/renovacao.png?raw=true)
+
+
+- **No clique dos botões**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-item]]"
+  data-gtm-subname="renovacao"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-item]]  | Deve retornar o nome do botão clicado | "solicitar-renovacao", "consultar-solicitacoes" e etc |
+| [[step]]  | Deve retornar o nome da aba | "solicitar-renovacao-2-via", "relatorio-de-renovacoes" e etc |
+
+
+<br />
+
+
+
+- **Ao selecionar alguma opção nos steps**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[item-selecionado]]"
+  data-gtm-subname="[[titulo]]"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[item-selecionado]]  | Deve retornar o nome do item selecionado | "COL10J", "todos"|
+| [[titulo]]  | Deve retornar o nome do titulo | "susep", "marca" e etc |
+| [[step]]  | Deve retornar o nome da aba | "solicitar-renovacao-2-via", "relatorio-de-renovacoes" e etc |
+
+<br />
+
+- **Em todas as etapas do formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<form 
+  data-gtm-type="form"
+  data-gtm-name= "renovacao"
+  data-gtm-step="[[step]]"
+ >
+</form>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[step]]  | Deve retornar o nome da aba | "solicitar-renovacao-2-via", "relatorio-de-renovacoes" e etc |
+
+
+<br />
+
+
+- **Na interação com os campos do formulário em cada etapa**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<input  
+  data-gtm-form="input"
+  data-gtm-name="[[campo]]"
+  data-gtm-step="[[step]]"
+ >
+</input>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[campo]]  | Deve retornar o nome do campo que teve a interação | "sucursal", "apolice" e etc |
+| [[step]]  | Deve retornar o nome da aba | "solicitar-renovacao-2-via", "relatorio-de-renovacoes" e etc |
+
+
+<br />
+
+
+
+
 
 
 
