@@ -1226,7 +1226,7 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
   data-gtm-clicktype="button"
   data-gtm-name="[[nome-botao]]"
   data-gtm-subname="novidades"
-  data-gtm-subname="[[step]]"
+  data-gtm-step="[[step]]"
 
  >
 </div>
@@ -1236,6 +1236,35 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 | :-------- | :---------- | :------ | 
 | [[nome-botao]]  | Deve retornar o nome do botao clicado | "proximo", "anterior", "comecar-as-mudancas" |
 | [[step]]  | Deve retornar o nome da aba | "cabecalho-e-menu", "passo-a-passo" e etc |
+
+
+<br />
+
+### Gestão de Vendas
+
+![gestao](https://implementacaoaunica.github.io/client/prints/gestao-de-vendas.png?raw=true)
+
+
+- **No clique doo botão buscar**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-botao]]"
+  data-gtm-subname="[[titulo]]"
+  data-gtm-step="[[step]]"
+
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-botao]]  | Deve retornar o nome do botao | "acessar", "acesse-agora" e etc |
+| [[titulo]]  | Deve retornar o titulo do card clicaod | "porto-plus", "programa-super", "porto-educ" e etc |
+| [[step]]  | Deve retornar o step | "incentivo-e-relacionamento", "funcionalidade-para-vendas", "informacao-e-capacitacao" e etc |
 
 
 <br />
