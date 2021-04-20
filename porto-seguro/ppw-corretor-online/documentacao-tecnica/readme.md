@@ -213,7 +213,7 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 ### Exemplos práticos
 
-- Localizar Documentos
+#### Localizar Documentos:
 
 ![Localizar-doc](https://implementacaoaunica.github.io/client/prints/localizar-doc.png?raw=true)
 
@@ -392,7 +392,7 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 
 <br />
 
-
+#### Orçamento
 
 - Orçamento
 
@@ -554,9 +554,269 @@ Caso exista a necessidade de especificar ainda mais o elemento que foi clicado �
 | [[titulo]]  | Deve retornar o nome do titulo | "seguradoras-para-calcular" e etc |
 | [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
 
+<br />
+
+---
+
+### Proposta
+
+![proposta](https://implementacaoaunica.github.io/client/prints/proposta.png?raw=true)
+
+
+- **No clique dos botões ou links**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="[[button ou link]]"
+  data-gtm-name="[[nome-item]]"
+  data-gtm-subname="proposta"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[[button ou link]]  | Deve retornar o tipo de elemento clicado | "botao" ou "link" |
+| [[nome-item]]  | Deve retornar o nome do botão ou link clicado | "voltar-para-orcamento", "salvar", "continuar" e etc |
+| [[step]]  | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
 
 
 <br />
+
+- **Ao selecionar alguma opção de checkbox nos steps**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[item-selecionado]]"
+  data-gtm-subname="[[titulo]]"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[item-selecionado]]  | Deve retornar o nome do item selecionado | "1x-todas-cartao-de-credito-porto-seguro", "o-cliente-deseja-adquirir-cartao-porto" e etc |
+| [[titulo]]  | Deve retornar o nome do titulo | "formas-de-pagamento", "dados-de-cobrança" e etc |
+| [[step]]  | Deve retornar o nome do step | "proposta-pagamento", "proposta-cadastro", "proposta-veiculo" e etc |
+
+<br />
+
+- **Em todas as etapas do formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<form 
+  data-gtm-type="form"
+  data-gtm-name= "proposta"
+  data-gtm-step="[[step]]"
+ >
+</form>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[step]]  | Deve retornar o nome do step | "proposta-pagamento", "proposta-cadastro", "proposta-veiculo" e etc |
+
+
+<br />
+
+
+- **Na interação com os campos do formulário em cada etapa**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<input  
+  data-gtm-form="input"
+  data-gtm-name="[[campo]]"
+  data-gtm-step="[[step]]"
+ >
+</input>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[campo]]  | Deve retornar o nome do campo que teve a interação | "numero-cartao-credito", "validade-cartao" e etc |
+| [[step]]  | Deve retornar o nome do step | "proposta-pagamento", "proposta-cadastro", "proposta-veiculo" e etc |
+
+
+<br />
+
+![modal-atencao](https://implementacaoaunica.github.io/client/prints/modal-atencao.png?raw=true)
+
+
+- **No clique dos botões dos modais de cada step**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-button]]"
+  data-gtm-subname="[[nome-modal]]"
+  data-gtm-step="[[step]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-button]]  | Deve retornar o nome do botão clicado | "sim", "nao" e etc|
+| [[nome-modal]]  | Deve retornar o nome do modal | "atencao" e etc |
+| [[step]]  | Deve retornar o nome do step | "proposta-pagamento", "proposta-cadastro", "proposta-veiculo" e etc  |
+
+
+
+<br />
+
+#### Seguro Carta Verde
+
+![seguro-carta-verde](https://implementacaoaunica.github.io/client/prints/seguro-carta-verde.png?raw=true)
+
+
+- **No clique dos botões ou links**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="[[button ou link]]"
+  data-gtm-name="[[nome-item]]"
+  data-gtm-subname="seguro-carta-verde"
+  data-gtm-cliente="[[cliente]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[[button ou link]]  | Deve retornar o tipo de elemento clicado | "botao" ou "link" |
+| [[nome-item]]  | Deve retornar o nome do botão ou link clicado | "buscar", "pesquisar-cep" e etc |
+| [[cliente]]  | Deve retornar o tipo de cliente | "segurado" ou "novo-cliente" |
+
+
+<br />
+
+
+
+- **Ao selecionar alguma opção nos steps**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="select"
+  data-gtm-name="[[item-selecionado]]"
+  data-gtm-subname="[[titulo]]"
+  data-gtm-cliente="[[cliente]]"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[item-selecionado]]  | Deve retornar o nome do item selecionado | "segurado", "cliente", "porto" e etc|
+| [[titulo]]  | Deve retornar o nome do titulo | "cliente", "empresa" e etc |
+| [[cliente]]  | Deve retornar o tipo de cliente | "segurado" ou "novo-cliente" |
+
+<br />
+
+- **Em todas as etapas do formulario**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<form 
+  data-gtm-type="form"
+  data-gtm-name= "seguro-carta-verde"
+  data-gtm-cliente="[[cliente]]"
+ >
+</form>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[cliente]]  | Deve retornar o tipo de cliente | "segurado" ou "novo-cliente" |
+
+
+<br />
+
+
+- **Na interação com os campos do formulário em cada etapa**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<input  
+  data-gtm-form="input"
+  data-gtm-name="[[campo]]"
+  data-gtm-cliente="[[cliente]]"
+ >
+</input>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[campo]]  | Deve retornar o nome do campo que teve a interação | "placa", "chassi" e etc |
+| [[cliente]]  | Deve retornar o tipo de cliente | "segurado" ou "novo-cliente" |
+
+
+<br />
+
+- Modal
+
+![modal-resultado](https://implementacaoaunica.github.io/client/prints/modal-resultado.png?raw=true)
+
+- **No clique dos botões dos modais**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-button]]"
+  data-gtm-subname="resultado-da-busca-de-apolice"
+  data-gtm-cliente="segurado"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-button]]  | Deve retornar o nome do botão clicado | "salvar-e-sair", "ok", "fechar" e etc|
+
+<br />
+
+- Historico Transmissão de Orçamentos
+
+![modal-resultado](https://implementacaoaunica.github.io/client/prints/historico-transmissao.png?raw=true)
+
+- **No clique dos botões dos modais**<br />
+
+```html
+<!-- Use se os atributos no elemento a ser clicado -->
+<div  
+  data-gtm-type="click"
+  data-gtm-clicktype="button"
+  data-gtm-name="[[nome-button]]"
+  data-gtm-subname="historico-de-transmissao-de-orcamentos"
+  data-gtm-cliente="novo-cliente"
+ >
+</div>
+```
+
+| Variavel  |  Descrição  | Exemplo |
+| :-------- | :---------- | :------ | 
+| [[nome-button]]  | Deve retornar o nome do botão clicado | "imprirmir", "fechar"|
+
+<br />
+
+- 
+
+
+
 
 ---
 
