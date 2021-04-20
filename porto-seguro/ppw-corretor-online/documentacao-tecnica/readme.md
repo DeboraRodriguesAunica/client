@@ -127,7 +127,7 @@ customData = {
 ```
 
 | Atributo  | Descrição de preenchimento  | Tipo de dado | Valor padrão | Exemplo |
-| :-------- | :--------------------       | :----------- | :----------- | :------ |
+| :-------- | :-------------------------- | :----------- | :----------- | :------ |
 | customData.site  | Objeto destinado a armazenar informações sobre a página/site que está sendo acessada. | Objeto | ""| |
 | customData.site.brand  | Deve indicar qual a marca do site. | Texto | ""| “portoseguro”|
 | customData.site.versao  | Deve indicar qual variação/versão do site o usuário está acessando. | Texto | ""| “1.2”|
@@ -243,8 +243,8 @@ dataLayer.push({
 </script>
 ```
 
-| Atributo  |  Descrição     | Exemplo |
-| :-------- | :------------- | :------ | 
+| Atributo  | Descrição de preenchimento  | Exemplo |
+| :-------- | :-------------------------- | :------ | 
 | etapa     | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
 | nome      | Deve retornar o nome da pagina | "proposta", "orcamento" e etc |
 | step      | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
@@ -268,8 +268,9 @@ dataLayer.push({
 })
 </script>
 ```
-| Atributo  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
+
+| Atributo  | Descrição de preenchimento  | Exemplo |
+| :-------- | :-------------------------- | :------ | 
 | etapa     | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
 | nome      | Deve retornar o nome do modal | "atencao" e etc |
 | step      | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
@@ -303,8 +304,9 @@ dataLayer.push({
 });
 </script>
 ```
-| Atributo  |  Descrição                 | Exemplo |
-| :-------- | :------------------------- | :------ | 
+
+| Atributo  | Descrição de preenchimento  | Exemplo |
+| :-------- | :-------------------------- | :------ | 
 | tipo_servico | Tipo do serviço referente à solicitação que foi realizada. | "proposta", "orcamento" e etc |
 | id_usuario   | CPF Criptografado  AESCryptography (Utilizada nos ambientes porto e azul) | “a750c220a060fcf487f9519d3203035b” |
 | susep        | Deve indicar o susep do corretor | "CJO1" e etc |
@@ -335,8 +337,8 @@ dataLayer.push({
 </script>
 ```
 
-| Atributo  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
+| Atributo  | Descrição de preenchimento  | Exemplo |
+| :-------- | :-------------------------- | :------ | 
 | codigo  | Deve trazer o código do erro | "124 e etc |
 | servico  | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
 | mensagem  | Deve trazer a descrição do erro | "dados-invalidos" e etc |
