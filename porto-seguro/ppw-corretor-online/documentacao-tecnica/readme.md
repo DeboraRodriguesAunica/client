@@ -348,7 +348,7 @@ dataLayer.push({
 
 ### Exemplos práticos
 
-#### Localizar Documentos:
+### Localizar Documentos:
 
 ![Localizar-doc](https://implementacaoaunica.github.io/client/prints/localizar-doc.png?raw=true)
 
@@ -529,7 +529,7 @@ dataLayer.push({
 
 ---
 
-#### Orçamento
+### Orçamento
 
 - Orçamento
 
@@ -813,7 +813,7 @@ dataLayer.push({
 
 ---
 
-#### Seguro Carta Verde
+### Seguro Carta Verde
 
 ![seguro-carta-verde](https://implementacaoaunica.github.io/client/prints/seguro-carta-verde.png?raw=true)
 
@@ -954,7 +954,7 @@ dataLayer.push({
 
 ---
 
-#### Renovação
+### Renovação
 
 ![renovacao](https://implementacaoaunica.github.io/client/prints/renovacao.png?raw=true)
 
@@ -1046,7 +1046,7 @@ dataLayer.push({
 
 ---
 
-#### Endoso
+### Endoso
 
 - Inclusão de item
 
