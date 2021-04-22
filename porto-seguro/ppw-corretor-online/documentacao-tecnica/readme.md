@@ -24,6 +24,7 @@
 - [Atributo data-gtm-subname](#atributo-data-gtm-subname)
 - [Eventos Padrões](#eventos-padr&otilde;es)
 - [Exemplos práticos](#exemplos-pr&aacute;ticos)
+- [Parametrização](#parametriza&ccedil;&atilde;o)
 
 
 
@@ -1413,6 +1414,86 @@ dataLayer.push({
 
 
 <br />
+
+---
+
+### Parametrização
+
+
+- Proposta Veículo
+
+As URL’s devem conter o parâmetro origem e seu valor deve ser proposta-cadastro
+
+
+![veiculo](https://implementacaoaunica.github.io/client/prints/veiculo.png?raw=true)
+
+https://aplwebhml.portoseguro.brasil/portoprintweb/index.jsp?menuid=COL-02XV6&orig=menu_auto&portal=1&novoportal=1&portal=1&corsus=COL10J&webusrcod=2299925&usrtip=S&sesnum=4669456&cpf=11144477735?origem=proposta-cadastro
+
+
+- Faq
+
+As URL’s devem conter o parâmetro origem e seu valor deve ser portoprintweb
+
+
+![faq](https://implementacaoaunica.github.io/client/prints/faq.png?raw=true)
+
+
+https://aplwebhml.portoseguro.brasil/portoprintweb/file/faq.pdf?origem=portoprintweb
+
+
+- Manual
+
+
+As URL’s devem conter o parâmetro origem e seu valor deve ser portoprintweb
+
+
+![faq](https://implementacaoaunica.github.io/client/prints/manual.png?raw=true)
+
+
+https://aplwebhml.portoseguro.brasil/portoprintweb/file/manual.pdf?origem=portoprintweb
+
+
+- Pesquisa
+
+As URL’s devem conter o parâmetro origem e seu valor deve ser portoprintweb
+
+
+![pesquisa](https://implementacaoaunica.github.io/client/prints/pesquisa.png?raw=true)
+
+https://docs.google.com/forms/d/e/1FAIpQLSfCOXdEiPMyAjBXYFRt0_EGTndeyL2EGo_3u8kN8m9LEUthKQ/viewform?origem=portoprintweb
+
+
+- Gestão de Vendas
+
+As URL’s devem conter o parâmetro origem e seu valor deve ser gestao-e-marketing-gestao-de-vendas
+
+**Paginas Internas**
+
+Porto Plus:
+https://corretor.portoseguro.com.br/corretoronline/portoplus?origem=gestao-e-marketing-gestao-de-vendas
+
+Programa Super:
+https://corretor.portoseguro.com.br/corretoronline/iframe?origem=gestao-e-marketing-gestao-de-vendas&javax.portlet.ctx_iframe=url=https://wwws.portoseguro.com.br/gerenciadorinterfaceweb/col_programaSuper.do?portal=1%23%23corsus=COL10J%23%23webusrcod=2299925%23%23usrtip=S%23%23sesnum=194969131%23%23cpf=36760088123%23%23modalSuper=false%23%23erroMesAnterior=false%23%23erroMesAtual=false%23%23inibirMesAnterior=false%23%23inibirMesAtual=false
+
+Campanhas:
+https://corretor.portoseguro.com.br/corretoronline/iframe?origem=gestao-e-marketing-gestao-de-vendas&javax.portlet.ctx_iframe=url=https://corretor.portoseguro.com.br/col/static-files/ncolc479.html?portal=1%23%23corsus=COL10J%23%23webusrcod=2299925%23%23usrtip=S%23%23sesnum=194969131%23%23cpf=36760088123
+
+**Paginas Externas**
+
+As URL’s devem conter os parâmetro utm_source, utm_medium e utm_campaign onde seus valores devem ser respectivamente gestao-vendas, portoseguro-col, gestao-e-marketing.
+
+
+Corretor 2.0:
+https://www.vendamaisportoseguro.com.br/login-col?portal=1%23%23corsus=COL10J%23%23webusrcod=2299925%23%23usrtip=S%23%23sesnum=195236942%23%23cpf=36760088123&utm_source=gestao-vendas&utm_medium=portoseguro-col&utm_campaign=gestao-e-marketing
+
+
+Promo digital:
+https://promodigital.marketingdaproducao.com.br/?portal=1&corsus=COL10J&webusrcod=2299925&usrtip=S&sesnum=195236942&cpf=36760088123&menuid=COL-03SA7&utm_source=gestao-vendas&utm_medium=portoseguro-col&utm_campaign=gestao-e-marketing
+
+Criação de sites - On Corretor:
+https://oncorretor.com.br/?portal=1%23%23corsus=COL10J%23%23webusrcod=2299925%23%23usrtip=S%23%23sesnum=194898639%23%23cpf=36760088123&utm_source=gestao-vendas&utm_medium=portoseguro-col&utm_campaign=gestao-e-marketing
+
+
 
 ---
 
