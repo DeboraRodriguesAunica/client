@@ -258,7 +258,8 @@ dataLayer = window.dataLayer || [];
 dataLayer.push({
   event: 'modal',
   titulo: '',
-  etapa: ''
+  etapa: '',
+  action: ''
 })
 </script>
 ```
@@ -267,6 +268,7 @@ dataLayer.push({
 | :-------- | :-------------------------- | :------ | 
 | etapa     | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
 | titulo      | Deve retornar o titulo do modal | "atencao" e etc |
+| action      | Deve retornar a ação do usuário com o modal | "open" ou "close" |
 
 <br />
 
@@ -278,32 +280,58 @@ dataLayer.push({
 ```html
 <script>
 dataLayer.push({
-  event: 'solicitacao_servico',
-  tipo_servico: '',   
-  id_usuario: '', 
-  susep: '',
-  doc: '', // em alguns casos
-  veiculo: '', //em alguns casos
-  lmi: '', //em alguns casos 
-  retorno: '',      
-  descricao: '',      
-      erro: {
-           codigo: '',
-           servico: '',
-           mensagem: ''
-      }
+    event: 'solicitacao_servico',
+    nome_servico: '',
+    tipo_servico: '',
+    cliente: '',
+    susep: '',
+    doc: '',
+    tipo_pessoa: '',
+    tipo_uso: '',
+    modelo_veiculo: '',
+    ano_fabricacao: '',
+    paises: '',
+    cartao_porto: '',
+    id_oferta: '',
+    valor_premio,
+    valor_franquia,
+    plano: '',
+    marca: '',
+    seguro_coletivo: '',
+    worksite: '',
+    lmi: '',
+    retorno: '',
+    descricao: '',
+    erro: {
+        codigo: '',
+        servico: ''
+    }
 });
 </script>
+
+
 ```
 
 | Atributo  | Descrição de preenchimento  | Exemplo |
 | :-------- | :-------------------------- | :------ | 
-| tipo_servico | Tipo do serviço referente à solicitação que foi realizada. | "proposta", "orcamento" e etc |
-| id_usuario   | CPF Criptografado  AESCryptography (Utilizada nos ambientes porto e azul) | “a750c220a060fcf487f9519d3203035b” |
-| susep        | Deve indicar o susep do corretor | "CJO1" e etc |
+| nome_servico | Deve indicar o nome do serviço que será realizado | "proposta", "orcamento" e etc |
+| tipo_servico | Deve indicar qual o tipo de serviço que está sendo solicitado | "salvar-orcamento" e etc |
+| susep        | Deve indicar o susep preenchida nos formularios | "CJO1" e etc |
 | cliente      | Deve retornar o nome do cliente | "segurado", "novo-cliente" e etc |
 | doc          | Deve retornar o numero da doc | "56565656" e etc |
-| veiculo      | Deve retornar o nome do veiculo | "novo-focus-hath" e etc |
+| tipo_pessoa          | Deve retornar o tipo da pessoa | "fisica" ou "juridica"|
+| tipo_uso          | Deve retornar o tipo de uso com Veiculo| "particular", "taxi" e etc|
+| modelo_veiculo      | Deve retornar o nome do veiculo | "novo-focus-hath" e etc |
+| ano_fabricacao      | Deve retornar o ano de fabricação | "2015" e etc |
+| paises      | Paises selecionados (separados por ,)| "argentina", "paraguai" e etc |
+| cartao_porto      | Retornar true ou false| "true", "false"  |
+| id_oferta      | Deve trazer o id da oferta (trazer quando pertinente)| "6465656jjj" e etc|
+| valor_premio      | Deve trazer o valor do prêmio (trazer quando pertinente) | "196.98" e etc  |
+| valor_franquia      | Deve trazer o valor da franquia (trazer quando pertinente) | "170.98" e etc |
+| plano      | Deve trazer o plano selecionado (trazer quando pertinente) | “coberturas-01-auto-premium-casa” |
+| marca      | Deve trazer a marca do plano selecionado (trazer quando pertinente)| “azul”,”itau”,”porto-seguro” |
+| seguro_coletivo      | Deve retornar se possui seguro coletivo |  "sim" ou "nao"|
+| worksite      | Deve retornar sim ou não| "sim" ou "nao" |
 | lmi          | Deve retornar o valor do lmi | "48.773,00" e etc |
 | retorno      | Deve indicar o sucesso ou erro da tentativa da solicitação de serviço | "sucesso" ou "erro" |
 | descricao    | Deve trazer a descrição do retorno | "proposta-realizada-com-sucesso" e etc |
@@ -312,6 +340,131 @@ dataLayer.push({
 | mensagem    | Deve trazer a descrição do erro | "dados-invalidos" e etc |
 
 <br />
+
+#### Geração de proposta - Transação
+
+<p style='text-align: justify;'>É necessário a implementação de um dataLayer.push com o objetivo de mensurar o número de serviços contratados. Importante que o método descrito seja disparado no retorno da solicitação:</p>
+
+```html
+<script>
+dataLayer = window.dataLayer || [];
+dataLayer.push({
+    event: 'transmissao',
+    doc: '',
+    origem: '',
+    numero_proposta: '',
+    cartao_porto: '',
+    versao_proposta: '',
+    paymentMethod: '',
+    id_oferta: '',
+    retorno:  '',
+    descricao: '',
+    ecommerce: {
+        purchase: {
+            actionField: {
+                id: '',             //id da transação
+                revenue: 0.00,
+            },
+            products: [{
+              id: '',
+              name: '',
+              brand: '',
+              valor_premio,
+              valor_franquia,
+            }]
+        }
+    },
+    erro: {
+        codigo: '',
+        servico: ''
+    }
+});
+</script>
+
+
+
+```
+
+| Atributo  | Descrição de preenchimento  | Exemplo |
+| :-------- | :-------------------------- | :------ | 
+| doc          | Deve retornar o numero da doc | "56565656" e etc |
+| origem          | Deve retornar a origem  | "auto 2.0" ou "antigo""|
+| numero_proposta         | Deve retornar o numero da proposta| "35656456" e etc|
+| cartao_proposta      | Deve retornar o cartao | "visa", "mastercard", "nao-contratado" |
+| versao_proposta      | numero da versao da proposta | "5444646" e etc |
+| paymentMethod      |  "metodo de pagamento" | "cartao-de-credito" e etc |
+| id_oferta      | Deve retornar o id da oferta | "454646" e etc |
+| retorno      | Deve indicar o sucesso ou erro da tentativa da solicitação de serviço | "sucesso" ou "erro" |
+| descricao    | Deve trazer a descrição do retorno | "proposta-realizada-com-sucesso" e etc |
+| ecommerce.purchase.actionField.id  |  TS+Protocolo | "dd/mm/yyyy-hh:mm:ss:protocolo de transmição" |
+| ecommerce.purchase.actionField.revenue  | Elemento deve informar o valor total da transação | "236.00" e etc |
+| ID da oferta  | Retornar o id da oferta | “321” e etc |
+| ecommerce.purchase.products[x].name  | Deve trazer o nome do plano | “plano123" e etc |
+| ecommerce.purchase.products[x].brand  | Marca do plano | “porto seguro" e etc |
+| ecommerce.purchase.products[x].valor_premio  | Deve trazer o valor do premio | “0.00" e etc |
+| ecommerce.purchase.products[x].valor_franquia  | Valor total da franquia | “0.00" e etc |
+| codigo       | Deve trazer o código do erro | "124 e etc |
+| servico      | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
+| mensagem    | Deve trazer a descrição do erro | "dados-invalidos" e etc |
+
+
+#### Resultado consulta
+
+
+<p style='text-align: justify;'>Chamada criada para ser disparada sempre que for resultado de alguma busca.</p>
+
+```html
+<script>
+dataLayer.push({
+    event: 'resultado_consulta',
+    nome_servico: '',
+    tipo_busca: '',
+    susep: '',
+    cliente: '',
+    data_calculo: '', 
+    data_inicio_vigencia: '',
+    placa: '',
+    num_item: '',
+    sucursal: '',
+    apolice: '',
+    cancelamento: '',
+    tipo_seguro: '',
+    situacao: '',
+    status_expiracao: '',
+    retorno: '',
+    descricao: '',
+    erro: {
+        codigo: '',
+        servico: ''
+    }
+});
+</script>
+
+
+```
+
+| Atributo  | Descrição de preenchimento  | Exemplo |
+| :-------- | :-------------------------- | :------ | 
+| nome_servico | Deve indicar o nome do serviço que será realizado | "localizar-documentos" e etc|
+| tipo_busca | Deve retornar o tipo de busca | "inclusao-de-item", "substituicao-de-veiculo-ou-alteracao-apolice" e etc |
+| susep        | Deve indicar o susep preenchida nos formularios | "CJO1" e etc |
+| cliente      | Deve retornar o nome do cliente | "segurado", "novo-cliente" e etc |
+| data_calculo          | Deve retornar a data do calculo | "22/04/21" e etc |
+| data_inicio_vigencia          | Deve retornar a data de vigência | "28/04/21" e etc|
+| placa          | "placa criptografada"| "jsdosodkoskd6565"|
+| num_item      | Deve retornar o nome numero do item | "5454545" e etc |
+| sucursal      | "Deve retornar a sucursal" | "sucursal" e etc |
+| apolice      | Deve retornar o numero da apolice| "4545454545" e etc |
+| cancelamento      | Deve retornar o cancelamento| "apolice" ou "item" ou "apolice-item"  |
+| tipo_seguro      | Deve trazer o tipo de seguro selecionado no campo| "n-cia", "n-documento" e etc|
+| situacao      | Deve retornar a situação | "calculado, "pendente", "recusado" e etc  |
+| status_expiracao      | Deve retornar o status da expiração | "prazo-expirado", "tarifa-expirada" e etc |
+| retorno      | Deve indicar o sucesso ou erro da tentativa da solicitação de serviço | "sucesso" ou "erro" |
+| descricao    | Deve trazer a descrição do retorno | "proposta-realizada-com-sucesso" e etc |
+| codigo       | Deve trazer o código do erro | "124 e etc |
+| servico      | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
+| mensagem    | Deve trazer a descrição do erro | "dados-invalidos" e etc |
+
 
 #### Erros
 
@@ -1302,7 +1455,7 @@ dataLayer.push({
 ![novidades](https://implementacaoaunica.github.io/client/prints/novidades.png?raw=true)
 
 
-- **No clique doo botão buscar**<br />
+- **No clique do botão buscar**<br />
 
 ```html
 <!-- Use se os atributos no elemento a ser clicado -->
