@@ -1422,10 +1422,11 @@ dataLayer.push({
 
 - Proposta Veículo
 
+
 As URL’s devem conter o parâmetro origem e seu valor deve ser proposta-cadastro
 
 
-![veiculo](https://implementacaoaunica.github.io/client/prints/veiculo.png?raw=true)
+![veiculo](https://implementacaoaunica.github.io/client/prints/veiculo.PNG?raw=true)
 
 https://aplwebhml.portoseguro.brasil/portoprintweb/index.jsp?menuid=COL-02XV6&orig=menu_auto&portal=1&novoportal=1&portal=1&corsus=COL10J&webusrcod=2299925&usrtip=S&sesnum=4669456&cpf=11144477735?origem=proposta-cadastro
 
@@ -1435,7 +1436,7 @@ https://aplwebhml.portoseguro.brasil/portoprintweb/index.jsp?menuid=COL-02XV6&or
 As URL’s devem conter o parâmetro origem e seu valor deve ser portoprintweb
 
 
-![faq](https://implementacaoaunica.github.io/client/prints/faq.png?raw=true)
+![faq](https://implementacaoaunica.github.io/client/prints/faq.PNG?raw=true)
 
 
 https://aplwebhml.portoseguro.brasil/portoprintweb/file/faq.pdf?origem=portoprintweb
@@ -1447,7 +1448,7 @@ https://aplwebhml.portoseguro.brasil/portoprintweb/file/faq.pdf?origem=portoprin
 As URL’s devem conter o parâmetro origem e seu valor deve ser portoprintweb
 
 
-![faq](https://implementacaoaunica.github.io/client/prints/manual.png?raw=true)
+![faq](https://implementacaoaunica.github.io/client/prints/manual.PNG?raw=true)
 
 
 https://aplwebhml.portoseguro.brasil/portoprintweb/file/manual.pdf?origem=portoprintweb
