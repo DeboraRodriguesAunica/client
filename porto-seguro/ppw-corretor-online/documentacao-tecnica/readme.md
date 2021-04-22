@@ -112,17 +112,23 @@ O objeto customData é a fonte de alimentação de informações pertinentes ao 
 customData = {
   site: {
     brand: '',
-            versao: '',
+    versao: '',
     portal: ''
   },
-      user: {
-        id: '',
-        id_usuario: '',
-            tipo_usuario: '',
-            saldo: '',
-        susep: '',
-            logado: ''
-      }
+  user: {
+    id: '',
+    id_usuario: '',
+    tipo_usuario: '',
+    saldo: '',
+    susep: '',
+    logado: ''
+  },
+  page: {
+    cliente: ''.
+    step: '',
+    fluxo: ''
+  }
+
 }
 </script>
 ```
@@ -140,6 +146,9 @@ customData = {
 | customData.user.saldo  | Deve indicar o saldo total disponível do usuário | Texto | ""| “31.257”, “12.345”|
 | customData.user.susep  | Deve indicar o ID da Susep (quando se aplica). | Texto | ""| "COL10J"|
 | ccustomData.user.logado  | Deve indicar se o usuário está já realizou o Login | Boolean | ""| "true", "false"|
+| ccustomData.user.cliente  | Deve indicar o tipo de cliente | Texto | ""| "novo-cliente", "segurado"|
+| ccustomData.user.step  | Deve indicar o nome do step no fluxo | Texto | ""| "pagamento", "cadastro", "veiculo" e etc |
+| ccustomData.user.fluxo  | Deve indicar os fluxos macros | Texto | ""| "orcamento", "proposta" e etc |
 
 ### Estrutura HTML
 
@@ -211,17 +220,7 @@ Além disso, é necessário o preenchimento do atributo data-gtm-name para que p
 Caso exista a necessidade de especificar ainda mais o elemento que foi clicado é necessário indicar um no preenchimento do atributo data-gtm-subname para que possamos identificar em qual elemento ocorreu a interação.
 </p>
 
-#### Atributo data-gtm-step
 
-<p style='text-align: justify;'>
-Caso exista a necessidade de especificar ainda mais o elemento que foi clicado é necessário indicar um no preenchimento do atributo data-gtm-step para que possamos identificar em qual step ocorreu a interação.
-</p>
-
-#### Atributo data-gtm-cliente
-
-<p style='text-align: justify;'>
-Caso exista a necessidade de especificar ainda mais o elemento que foi clicado é necessário indicar um no preenchimento do atributo data-gtm-cliente para que possamos identificar em qual o tipo do cliente
-</p>
 
 ---
 
@@ -237,19 +236,15 @@ dataLayer = window.dataLayer || [];
 dataLayer.push({
   event: 'step_change',
       etapa: '',
-      nome: '',
-      step: '', // em alguns casos
-      cliente: '', //em alguns casos
+      titulo ''
 })
 </script>
 ```
 
 | Atributo  | Descrição de preenchimento  | Exemplo |
 | :-------- | :-------------------------- | :------ | 
-| etapa     | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
-| nome      | Deve retornar o nome da pagina | "proposta", "orcamento" e etc |
-| step      | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
-| cliente   | Deve retornar o nome do cliente | "segurado", "novo-cliente" |
+| etapa     | Deve retornar a etapa correspondente | "/localizar-documentos" e etc |
+| titulo     | Deve retornar o nome da pagina | "proposta", "orcamento" e etc |
 
 <br />
 
@@ -262,9 +257,7 @@ dataLayer.push({
 dataLayer = window.dataLayer || [];
 dataLayer.push({
   event: 'modal',
-  nome: '',
-  step: '', // em alguns casos,
-  cliente: '', //em alguns casos
+  titulo: '',
   etapa: ''
 })
 </script>
@@ -273,9 +266,7 @@ dataLayer.push({
 | Atributo  | Descrição de preenchimento  | Exemplo |
 | :-------- | :-------------------------- | :------ | 
 | etapa     | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
-| nome      | Deve retornar o nome do modal | "atencao" e etc |
-| step      | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
-| cliente   | Deve retornar o nome do cliente | "segurado", "novo-cliente" |
+| titulo      | Deve retornar o titulo do modal | "atencao" e etc |
 
 <br />
 
@@ -291,7 +282,6 @@ dataLayer.push({
   tipo_servico: '',   
   id_usuario: '', 
   susep: '',
-  cliente: '', //em alguns casos
   doc: '', // em alguns casos
   veiculo: '', //em alguns casos
   lmi: '', //em alguns casos 
@@ -546,7 +536,6 @@ dataLayer.push({
   data-gtm-type="click"
   data-gtm-clicktype="[[button ou link]]"
   data-gtm-name="[[nome-button ou link]]"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -555,7 +544,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[button ou link]]  | Deve retornar o tipo de elemento clicado | "button", "link" |
 | [[nome-button ou link]]  | Deve retornar o nome do botão ou link clicado | "salvar", "continuar", "distribuicao-de-corretagem", "pesquisar-cep" e etc |
-| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
 
 
 
@@ -569,7 +557,6 @@ dataLayer.push({
   data-gtm-type="select"
   data-gtm-name="[[nome-filtro]]"
   data-gtm-subname="[[opcao]]"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -578,7 +565,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [nome-filtro]]  | Deve retornar o nome do filtro | "documento", "susep", "seguro-coletivo" e etc |
 | [[opcao]]  | Deve retornar a opção selecionada | "seguro-novo", "renovacao", "sim" e etc |
-| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
 
 
 <br />
@@ -590,14 +576,12 @@ dataLayer.push({
 <form 
   data-gtm-type="form"
   data-gtm-name= "orcamento"
-  data-gtm-step="[[step]]"
  >
 </form>
 ```
 
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
-| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
 
 
 <br />
@@ -610,7 +594,6 @@ dataLayer.push({
 <input  
   data-gtm-form="input"
   data-gtm-name="[[campo]]"
-  data-gtm-step="[[step]]"
  >
 </input>
 ```
@@ -618,7 +601,6 @@ dataLayer.push({
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
 | [[campo]]  | Deve retornar o nome do campo que teve a interação | "nome", "data-nascimento" e etc |
-| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
 
 
 <br />
@@ -636,7 +618,6 @@ dataLayer.push({
   data-gtm-clicktype="button"
   data-gtm-name="[[nome-button]]"
   data-gtm-subname="[[nome-modal]]"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -645,7 +626,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[nome-button]]  | Deve retornar o nome do botão clicado | "salvar-e-sair", "ok", "fechar" e etc|
 | [[nome-modal]]  | Deve retornar o nome do modal | "modal-distribuicao-de-corretagem", "modal-depreciacao" e etc |
-| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
 
 
 
@@ -658,7 +638,6 @@ dataLayer.push({
 <div  
   data-gtm-type="select"
   data-gtm-subname="[[nome-modal]]"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -667,7 +646,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[opcao]]  | Deve retornar a opção selecionada | "help-desk-corretores", "auto-nucleo-de-negocios-emissao" e etc |
 | [[nome-modal]]  | Deve retornar o nome do modal | "modal-distribuicao-de-corretagem", "modal-depreciacao" e etc |
-| [[step]]  | Deve retornar o nome do step | "orcamento-cliente", "orcamento-veiculo" e etc |
 
 
 
@@ -683,7 +661,6 @@ dataLayer.push({
   data-gtm-type="select"
   data-gtm-name="[[item-selecionado]]"
   data-gtm-subname="[[titulo]]"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -712,7 +689,6 @@ dataLayer.push({
   data-gtm-clicktype="[[button ou link]]"
   data-gtm-name="[[nome-item]]"
   data-gtm-subname="proposta"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -721,7 +697,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[[button ou link]]  | Deve retornar o tipo de elemento clicado | "botao" ou "link" |
 | [[nome-item]]  | Deve retornar o nome do botão ou link clicado | "voltar-para-orcamento", "salvar", "continuar" e etc |
-| [[step]]  | Deve retornar o nome do step | "pagamento", "cadastro", "veiculo" e etc |
 
 
 <br />
@@ -734,7 +709,6 @@ dataLayer.push({
   data-gtm-type="select"
   data-gtm-name="[[item-selecionado]]"
   data-gtm-subname="[[titulo]]"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -743,7 +717,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[item-selecionado]]  | Deve retornar o nome do item selecionado | "1x-todas-cartao-de-credito-porto-seguro", "o-cliente-deseja-adquirir-cartao-porto" e etc |
 | [[titulo]]  | Deve retornar o nome do titulo | "formas-de-pagamento", "dados-de-cobrança" e etc |
-| [[step]]  | Deve retornar o nome do step | "proposta-pagamento", "proposta-cadastro", "proposta-veiculo" e etc |
 
 <br />
 
@@ -754,14 +727,10 @@ dataLayer.push({
 <form 
   data-gtm-type="form"
   data-gtm-name= "proposta"
-  data-gtm-step="[[step]]"
  >
 </form>
 ```
 
-| Variavel  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
-| [[step]]  | Deve retornar o nome do step | "proposta-pagamento", "proposta-cadastro", "proposta-veiculo" e etc |
 
 
 <br />
@@ -774,7 +743,6 @@ dataLayer.push({
 <input  
   data-gtm-form="input"
   data-gtm-name="[[campo]]"
-  data-gtm-step="[[step]]"
  >
 </input>
 ```
@@ -782,7 +750,6 @@ dataLayer.push({
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
 | [[campo]]  | Deve retornar o nome do campo que teve a interação | "numero-cartao-credito", "validade-cartao" e etc |
-| [[step]]  | Deve retornar o nome do step | "proposta-pagamento", "proposta-cadastro", "proposta-veiculo" e etc |
 
 
 <br />
@@ -799,7 +766,6 @@ dataLayer.push({
   data-gtm-clicktype="button"
   data-gtm-name="[[nome-button]]"
   data-gtm-subname="[[nome-modal]]"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -808,7 +774,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[nome-button]]  | Deve retornar o nome do botão clicado | "sim", "nao" e etc|
 | [[nome-modal]]  | Deve retornar o nome do modal | "atencao" e etc |
-| [[step]]  | Deve retornar o nome do step | "proposta-pagamento", "proposta-cadastro", "proposta-veiculo" e etc  |
 
 
 
@@ -830,7 +795,6 @@ dataLayer.push({
   data-gtm-clicktype="[[button ou link]]"
   data-gtm-name="[[nome-item]]"
   data-gtm-subname="seguro-carta-verde"
-  data-gtm-cliente="[[cliente]]"
  >
 </div>
 ```
@@ -839,7 +803,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[[button ou link]]  | Deve retornar o tipo de elemento clicado | "botao" ou "link" |
 | [[nome-item]]  | Deve retornar o nome do botão ou link clicado | "buscar", "pesquisar-cep" e etc |
-| [[cliente]]  | Deve retornar o tipo de cliente | "segurado" ou "novo-cliente" |
 
 
 <br />
@@ -854,7 +817,6 @@ dataLayer.push({
   data-gtm-type="select"
   data-gtm-name="[[item-selecionado]]"
   data-gtm-subname="[[titulo]]"
-  data-gtm-cliente="[[cliente]]"
  >
 </div>
 ```
@@ -863,7 +825,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[item-selecionado]]  | Deve retornar o nome do item selecionado | "segurado", "cliente", "porto" e etc|
 | [[titulo]]  | Deve retornar o nome do titulo | "cliente", "empresa" e etc |
-| [[cliente]]  | Deve retornar o tipo de cliente | "segurado" ou "novo-cliente" |
 
 <br />
 
@@ -874,14 +835,9 @@ dataLayer.push({
 <form 
   data-gtm-type="form"
   data-gtm-name= "seguro-carta-verde"
-  data-gtm-cliente="[[cliente]]"
  >
 </form>
 ```
-
-| Variavel  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
-| [[cliente]]  | Deve retornar o tipo de cliente | "segurado" ou "novo-cliente" |
 
 
 <br />
@@ -894,7 +850,6 @@ dataLayer.push({
 <input  
   data-gtm-form="input"
   data-gtm-name="[[campo]]"
-  data-gtm-cliente="[[cliente]]"
  >
 </input>
 ```
@@ -902,7 +857,6 @@ dataLayer.push({
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
 | [[campo]]  | Deve retornar o nome do campo que teve a interação | "placa", "chassi" e etc |
-| [[cliente]]  | Deve retornar o tipo de cliente | "segurado" ou "novo-cliente" |
 
 
 <br />
@@ -920,7 +874,6 @@ dataLayer.push({
   data-gtm-clicktype="button"
   data-gtm-name="[[nome-button]]"
   data-gtm-subname="resultado-da-busca-de-apolice"
-  data-gtm-cliente="segurado"
  >
 </div>
 ```
@@ -944,7 +897,6 @@ dataLayer.push({
   data-gtm-clicktype="button"
   data-gtm-name="[[nome-button]]"
   data-gtm-subname="historico-de-transmissao-de-orcamentos"
-  data-gtm-cliente="novo-cliente"
  >
 </div>
 ```
@@ -971,7 +923,6 @@ dataLayer.push({
   data-gtm-clicktype="button"
   data-gtm-name="[[nome-item]]"
   data-gtm-subname="renovacao"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -979,7 +930,6 @@ dataLayer.push({
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
 | [[nome-item]]  | Deve retornar o nome do botão clicado | "solicitar-renovacao", "consultar-solicitacoes" e etc |
-| [[step]]  | Deve retornar o nome da aba | "solicitar-renovacao-2-via", "relatorio-de-renovacoes" e etc |
 
 
 <br />
@@ -994,7 +944,6 @@ dataLayer.push({
   data-gtm-type="select"
   data-gtm-name="[[item-selecionado]]"
   data-gtm-subname="[[titulo]]"
-  data-gtm-step="[[step]]"
  >
 </div>
 ```
@@ -1003,7 +952,6 @@ dataLayer.push({
 | :-------- | :---------- | :------ | 
 | [[item-selecionado]]  | Deve retornar o nome do item selecionado | "COL10J", "todos"|
 | [[titulo]]  | Deve retornar o nome do titulo | "susep", "marca" e etc |
-| [[step]]  | Deve retornar o nome da aba | "solicitar-renovacao-2-via", "relatorio-de-renovacoes" e etc |
 
 <br />
 
@@ -1014,14 +962,9 @@ dataLayer.push({
 <form 
   data-gtm-type="form"
   data-gtm-name= "renovacao"
-  data-gtm-step="[[step]]"
  >
 </form>
 ```
-
-| Variavel  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
-| [[step]]  | Deve retornar o nome da aba | "solicitar-renovacao-2-via", "relatorio-de-renovacoes" e etc |
 
 
 <br />
@@ -1034,7 +977,6 @@ dataLayer.push({
 <input  
   data-gtm-form="input"
   data-gtm-name="[[campo]]"
-  data-gtm-step="[[step]]"
  >
 </input>
 ```
@@ -1042,7 +984,6 @@ dataLayer.push({
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
 | [[campo]]  | Deve retornar o nome do campo que teve a interação | "sucursal", "apolice" e etc |
-| [[step]]  | Deve retornar o nome da aba | "solicitar-renovacao-2-via", "relatorio-de-renovacoes" e etc |
 
 
 <br />
@@ -1370,7 +1311,6 @@ dataLayer.push({
   data-gtm-clicktype="button"
   data-gtm-name="[[nome-botao]]"
   data-gtm-subname="novidades"
-  data-gtm-step="[[step]]"
 
  >
 </div>
@@ -1379,43 +1319,13 @@ dataLayer.push({
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
 | [[nome-botao]]  | Deve retornar o nome do botao clicado | "proximo", "anterior", "comecar-as-mudancas" |
-| [[step]]  | Deve retornar o nome da aba | "cabecalho-e-menu", "passo-a-passo" e etc |
 
 
 <br />
 
 ---
 
-### Gestão de Vendas
 
-![gestao](https://implementacaoaunica.github.io/client/prints/gestao-de-vendas.png?raw=true)
-
-
-- **No clique doo botão buscar**<br />
-
-```html
-<!-- Use se os atributos no elemento a ser clicado -->
-<div  
-  data-gtm-type="click"
-  data-gtm-clicktype="button"
-  data-gtm-name="[[nome-botao]]"
-  data-gtm-subname="[[titulo]]"
-  data-gtm-step="[[step]]"
-
- >
-</div>
-```
-
-| Variavel  |  Descrição  | Exemplo |
-| :-------- | :---------- | :------ | 
-| [[nome-botao]]  | Deve retornar o nome do botao | "acessar", "acesse-agora" e etc |
-| [[titulo]]  | Deve retornar o titulo do card clicaod | "porto-plus", "programa-super", "porto-educ" e etc |
-| [[step]]  | Deve retornar o step | "incentivo-e-relacionamento", "funcionalidade-para-vendas", "informacao-e-capacitacao" e etc |
-
-
-<br />
-
----
 
 ### Parametrização
 
@@ -1452,47 +1362,6 @@ As URL’s devem conter o parâmetro origem e seu valor deve ser portoprintweb
 
 
 https://aplwebhml.portoseguro.brasil/portoprintweb/file/manual.pdf?origem=portoprintweb
-
-
-- Pesquisa
-
-As URL’s devem conter o parâmetro origem e seu valor deve ser portoprintweb
-
-
-![pesquisa](https://implementacaoaunica.github.io/client/prints/pesquisa.png?raw=true)
-
-https://docs.google.com/forms/d/e/1FAIpQLSfCOXdEiPMyAjBXYFRt0_EGTndeyL2EGo_3u8kN8m9LEUthKQ/viewform?origem=portoprintweb
-
-
-- Gestão de Vendas
-
-As URL’s devem conter o parâmetro origem e seu valor deve ser gestao-e-marketing-gestao-de-vendas
-
-**Paginas Internas**
-
-Porto Plus:
-https://corretor.portoseguro.com.br/corretoronline/portoplus?origem=gestao-e-marketing-gestao-de-vendas
-
-Programa Super:
-https://corretor.portoseguro.com.br/corretoronline/iframe?origem=gestao-e-marketing-gestao-de-vendas&javax.portlet.ctx_iframe=url=https://wwws.portoseguro.com.br/gerenciadorinterfaceweb/col_programaSuper.do?portal=1%23%23corsus=COL10J%23%23webusrcod=2299925%23%23usrtip=S%23%23sesnum=194969131%23%23cpf=36760088123%23%23modalSuper=false%23%23erroMesAnterior=false%23%23erroMesAtual=false%23%23inibirMesAnterior=false%23%23inibirMesAtual=false
-
-Campanhas:
-https://corretor.portoseguro.com.br/corretoronline/iframe?origem=gestao-e-marketing-gestao-de-vendas&javax.portlet.ctx_iframe=url=https://corretor.portoseguro.com.br/col/static-files/ncolc479.html?portal=1%23%23corsus=COL10J%23%23webusrcod=2299925%23%23usrtip=S%23%23sesnum=194969131%23%23cpf=36760088123
-
-**Paginas Externas**
-
-As URL’s devem conter os parâmetro utm_source, utm_medium e utm_campaign onde seus valores devem ser respectivamente gestao-vendas, portoseguro-col, gestao-e-marketing.
-
-
-Corretor 2.0:
-https://www.vendamaisportoseguro.com.br/login-col?portal=1%23%23corsus=COL10J%23%23webusrcod=2299925%23%23usrtip=S%23%23sesnum=195236942%23%23cpf=36760088123&utm_source=gestao-vendas&utm_medium=portoseguro-col&utm_campaign=gestao-e-marketing
-
-
-Promo digital:
-https://promodigital.marketingdaproducao.com.br/?portal=1&corsus=COL10J&webusrcod=2299925&usrtip=S&sesnum=195236942&cpf=36760088123&menuid=COL-03SA7&utm_source=gestao-vendas&utm_medium=portoseguro-col&utm_campaign=gestao-e-marketing
-
-Criação de sites - On Corretor:
-https://oncorretor.com.br/?portal=1%23%23corsus=COL10J%23%23webusrcod=2299925%23%23usrtip=S%23%23sesnum=194898639%23%23cpf=36760088123&utm_source=gestao-vendas&utm_medium=portoseguro-col&utm_campaign=gestao-e-marketing
 
 
 
