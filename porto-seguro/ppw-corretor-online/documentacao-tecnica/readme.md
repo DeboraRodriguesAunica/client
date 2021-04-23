@@ -88,11 +88,11 @@ Inserir a camada de dados antes do snippet de instalação do Google Tag Manager
 
 ```html
 <script>
-	window.dataLayer = window.dataLayer || [];
-	window.dataLayer.push({
-		'atributo1': '[[valor1]]',
-		'atributo2': '[[valor2]]'
-	});
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'atributo1': '[[valor1]]',
+    'atributo2': '[[valor2]]'
+  });
 </script>
 ```
 
@@ -121,7 +121,8 @@ customData = {
     tipo_usuario: '',
     saldo: '',
     susep: '',
-    logado: ''
+    logado: '',
+    origem: '',
   },
   page: {
     cliente: ''.
@@ -146,6 +147,7 @@ customData = {
 | customData.user.saldo  | Deve indicar o saldo total disponível do usuário | Texto | ""| “31.257”, “12.345”|
 | customData.user.susep  | Deve indicar o ID da Susep (quando se aplica). | Texto | ""| "COL10J"|
 | ccustomData.user.logado  | Deve indicar se o usuário está já realizou o Login | Boolean | ""| "true", "false"|
+| ccustomData.user.origem  | Deve indicar de onde veio o usuário | Texto | ""| "auto 2.0" ou "antigo"|
 | ccustomData.user.cliente  | Deve indicar o tipo de cliente | Texto | ""| "novo-cliente", "segurado"|
 | ccustomData.user.step  | Deve indicar o nome do step no fluxo | Texto | ""| "pagamento", "cadastro", "veiculo" e etc |
 | ccustomData.user.fluxo  | Deve indicar os fluxos macros | Texto | ""| "orcamento", "proposta" e etc |
