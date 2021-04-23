@@ -129,6 +129,42 @@ customData = {
     step: '',
     fluxo: ''
   }
+  cotacao: {
+    id_cotacao: '',
+    versao_cotacao: '',
+    seguro_corretor: '',
+    coberturas: ['RCFV - Danos Materiais', 'RCFV - Danos Corporais'],
+    coberturas_acessorio: [{
+      tipo_de_cobertura: 'equipamento',
+      tipo_de_acessorio: '', //nome do equipamento
+    },{
+      tipo_de_cobertura: 'acessorios',
+      tipo_de_acessorio: '', //nome do acessorio
+    }],
+    vidros: 'tipo_de_atendimento:<<referenciada ou livre-escolha>>',
+    veiculo: '',
+    ano_veiculo: '',
+    tipo_de_uso: '',
+    cep: '',
+    id_cliente: '',
+    assitencia: '',
+    carro_reserva: '',
+    despesa_extraodinaria: '',
+    franquias: '',
+    demais_assistencias: [''],
+    programa_de_relacionamento: [''],
+    vantagens_para_voce: [''],
+    quantidade_condutores_adc: '',
+    avaliacao_risco: [''],
+    bonus_classe: '',
+    bonus_origem: ''
+    seguro_residencial:{
+      tipo_moradia: '',
+      id_oferta: '',
+      valor_premio: ''
+    },
+  }
+}
 
 }
 </script>
@@ -143,14 +179,45 @@ customData = {
 | customData.user  | Objeto destinado a descrever as informações do usuário. O objeto deve ser trazido quando o usuário estiver identificado.| Objeto | ""| |
 | customData.user.id  | Deve indicar o ID de usuário que a plataforma atribui. | Texto | ""| "ABC123"|
 | customData.user.id_usuario  | CPF Criptografado  AESCryptography (Utilizada nos ambientes porto e azul) | Texto | ""| “a750c220a060fcf487f9519d3203035b”|
-| customData.user.tipo_usuario  | Deve indicar a classificação do usuário em sua conta PortoSeguro | Texto | ""| “corretor”, “prestador-de-servico”,“cliente"|
+| customData.user.tipo_usuario  | Deve indicar a classificação do usuário em sua conta PortoSeguro | Texto| ""| “corretor”, “prestador-de-servico”,“cliente"|
 | customData.user.saldo  | Deve indicar o saldo total disponível do usuário | Texto | ""| “31.257”, “12.345”|
 | customData.user.susep  | Deve indicar o ID da Susep (quando se aplica). | Texto | ""| "COL10J"|
-| ccustomData.user.logado  | Deve indicar se o usuário está já realizou o Login | Boolean | ""| "true", "false"|
-| ccustomData.user.origem  | Deve indicar de onde veio o usuário | Texto | ""| "auto 2.0" ou "antigo"|
-| ccustomData.user.cliente  | Deve indicar o tipo de cliente | Texto | ""| "novo-cliente", "segurado"|
-| ccustomData.user.step  | Deve indicar o nome do step no fluxo | Texto | ""| "pagamento", "cadastro", "veiculo" e etc |
-| ccustomData.user.fluxo  | Deve indicar os fluxos macros | Texto | ""| "orcamento", "proposta" e etc |
+| customData.user.logado  | Deve indicar se o usuário está já realizou o Login | Boolean | ""| "true", "false"|
+| customData.user.origem  | Deve indicar de onde veio o usuário | Texto | ""| "auto 2.0" ou "antigo"|
+| customData.user.cliente  | Deve indicar o tipo de cliente | Texto | ""| "novo-cliente", "segurado"|
+| customData.user.step  | Deve indicar o nome do step no fluxo | Texto | ""| "pagamento", "cadastro", "veiculo" e etc |
+| customData.user.fluxo  | Deve indicar os fluxos macros | Texto | ""| "orcamento", "proposta" e etc |
+| customData.cotacao.id_cotacao  |  Deve retornar o id da cotação| Texto | "" | "956565656"|
+| customData.cotacao.versao_cotacao  | Trazer a versão da cotação | Texto  | ""| "versao1" |
+| customData.cotacao.seguro_corretor  |  Trazer se é seguro do corretor| Texto | "" | “sim”,”nao”|
+| customData.coberturas  | Trazer as coberturas selecionadas | Array | []| 'RCFV - Danos Materiais', 'RCFV - Danos Corporais'|
+| customData.coberturas.coberturas_acessorio | Array de objetos destinado a guardar informações  sobre a cobertura de acessórios|Array de Objeto |[{}]| -|
+| customData.coberturas.tipo_de_cobertura   | Trazer o tipo cobertura selecionada  | Texto| ""| “equipamentos”, “acessorios”|
+| customData.coberturas.tipo_de_acessorio  | Trazer o tipo de acessório selecionado | Texto| ""| -|
+| customData.vidros  | Trazer o tipo de atendimento selecionado na cobertura de vidros | Texto | "" | “Tipo_de_atendimento:livre-escolha”, “tipo_de_atendimento:referenciada”|
+| customData.veiculo  | Deve trazer o veículo a ser cotado | Texto | ""| “Renault Sandero RS 2.0. Flex”|
+| customData.ano_veiculo  | Deve trazer o ano do veículo a ser cotado | Texto| "" | "2020"|
+| customData.tipo_de_uso  | Deve trazer o tipo de uso do veículo a ser cotado | Texto | "" |“particular” |
+| customData.cep  | Retornar o cep | Texto | ""|"051452-001" |
+| customData.id_cliente  | CPF do cliente criptografado utilizando o mesmo padrão de outros ambientes, (cpf preenchido no formulario) | Texto |"" | "aishdu6265"|
+| customData.assitencia  | Trazer as coberturas de assistência selecionadas |  Texto| ""| - |
+| customData.carro_reserva  | Trazer o carro reserva selecionado |  Texto |"" |“carro-reserva-porte-basico-15-dias” |
+| customData.despesa_extraodinaria  | Trazer as coberturas de despesas selecionadas  | Texto | "" | -|
+| customData.franquias  | Trazer as coberturas de franquia selecionadas  | Texto | ""|  -|
+| customData.demais_assistencias  | Trazer as coberturas de demais assistências selecionadas | Array | []| -|
+| customData.programa_de_relacionamento  | Trazer as coberturas de programas de relacionamento selecionadas | Array | []| -|
+| customData.vantagens_para_voce  | Trazer as coberturas de vantagens para você selecionadas |  Array | []| -|
+| customData.avaliacao_risco  |  Trazer os valores selecionado na avaliação de risco| Array | [] |[“transporte-da-porto-seguro”,”outros”] |
+| customData.bonus_classe  | Trazer a classe de bônus selecionada |  Texto| ""| -|
+| customData.bonus_origem  | Trazer a origem do bônus selecionado | Texto| ""| -|
+| customData.seguro_residencial  | Objeto destinado a armazenar os dados do seguro residencial | Objeto | {}| - |
+| customData.tipo_moradia  | Deve trazer o tipo de moradia selecionada (trazer quando pertinente) | Texto | ""| - |
+| customData.id_oferta  |  Deve trazer o ID da oferta (trazer quando pertinente)| Texto| "" | "s84554544"|
+| customData.valor_premio  | Deve trazer o valor do prêmio do seguro residencial (trazer quando pertinente) | Texto | ""| "125.62"|
+
+
+<br />
+
 
 ### Estrutura HTML
 
@@ -408,6 +475,8 @@ dataLayer.push({
 | codigo       | Deve trazer o código do erro | "124 e etc |
 | servico      | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
 | mensagem    | Deve trazer a descrição do erro | "dados-invalidos" e etc |
+
+<br />
 
 
 #### Resultado consulta
