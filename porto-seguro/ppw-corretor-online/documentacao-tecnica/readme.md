@@ -128,7 +128,7 @@ customData = {
     cliente: ''.
     step: '',
     fluxo: ''
-  }
+  },
   cotacao: {
     id_cotacao: '',
     versao_cotacao: '',
