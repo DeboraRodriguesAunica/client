@@ -326,8 +326,7 @@ dataLayer.push({
 dataLayer = window.dataLayer || [];
 dataLayer.push({
   event: 'modal',
-  titulo: '',
-  etapa: '',
+  nome: '',
   action: ''
 })
 </script>
@@ -335,8 +334,7 @@ dataLayer.push({
 
 | Atributo  | Descrição de preenchimento  | Exemplo |
 | :-------- | :-------------------------- | :------ | 
-| etapa     | Deve retornar a etapa correspondente | "/portoprintweb" e etc |
-| titulo      | Deve retornar o titulo do modal | "atencao" e etc |
+| nome      | Deve retornar o nome do modal | "atencao" e etc |
 | action      | Deve retornar a ação do usuário com o modal | "open" ou "close" |
 
 <br />
@@ -536,6 +534,8 @@ dataLayer.push({
 | servico      | Deve trazer qual serviço foi acionado  | "cobranca" e etc |
 | mensagem    | Deve trazer a descrição do erro | "dados-invalidos" e etc |
 
+###
+
 
 #### Erros
 
@@ -560,6 +560,47 @@ dataLayer.push({
 
 <br />
 
+#### Evento para lista de ofertas
+
+É necessário a implementação de um dataLayer.push com o objetivo de mensurar compra após a exibição dos produtos. Importante que o método descrito seja disparado após os produtos serem exibidos ao usuário
+
+```html
+<script>
+dataLayer.push({
+  event: 'lista_ofertas',
+  produto: [{
+    id: '',
+    name: '',
+    brand: '',
+    list: '',
+    valor_premio,
+    valor_franquia,
+    position: '',
+   },
+   {
+    id: '',
+    name: '',
+    brand: '',
+    list: '',
+    valor_premio,
+    valor_franquia,
+    position: '',
+  }]
+});
+</script>
+```
+
+| Atributo  | Descrição de preenchimento  | Exemplo |
+| :-------- | :-------------------------- | :------ | 
+| id  | Deve trazer o código SKU do produto | "123" e etc |
+| name  | Deve trazer o nome do plano  | "plano123" e etc |
+| brand  | Deve trazer marca do plano | “azul”,”itau”,”porto-seguro” |
+| list  | Deve trazer a qual lista a oferta pertenc| "ofertas-principais" e etc |
+| valor_premio  | Valor total do prêmio| "0.00" e etc |
+| valor_franquia  | Valor total da franquia | "0.00" e etc |
+| position  | Deve trazer a posição da oferta | "1" e etc |
+
+<br />
 
 ---
 
@@ -855,12 +896,15 @@ dataLayer.push({
 
 <br />
 
+![selecao](https://implementacaoaunica.github.io/client/prints/selecao.png?raw=true)
+
 - **Ao selecionar alguma opção nos modais de cada step**<br />
 
 ```html
 <!-- Use se os atributos no elemento a ser clicado -->
 <div  
   data-gtm-type="select"
+  data-gtm-name="[[selecao]]",
   data-gtm-subname="[[nome-modal]]"
  >
 </div>
@@ -868,8 +912,8 @@ dataLayer.push({
 
 | Variavel  |  Descrição  | Exemplo |
 | :-------- | :---------- | :------ | 
-| [[opcao]]  | Deve retornar a opção selecionada | "help-desk-corretores", "auto-nucleo-de-negocios-emissao" e etc |
-| [[nome-modal]]  | Deve retornar o nome do modal | "modal-distribuicao-de-corretagem", "modal-depreciacao" e etc |
+| [[selecao]]  | Deve retornar a opçao selecionada | "orcamento/azul-seguros" e etc |
+| [[nome-modal]]  | Deve retornar o nome do modal | "modal-distribuicao-de-corretagem", "modal-depreciacao", "modal-opcoes-de-impressao" e etc |
 
 
 
